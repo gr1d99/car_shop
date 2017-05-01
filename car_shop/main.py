@@ -201,7 +201,12 @@ class UserInterface(Country, Vehicle):
         menu_prompt_msg = "Please enter the number corresponding to the options below\n"
         menu_message = "%s: %s"
         input_message = ""
+        help_message = "\nYou can always quit by pressing the keys listed below" \
+                       "\n%(exit_keys)s\n" \
+                       "but to close the program completely press CTRL + C\n" % dict(
+            exit_keys=self.exit_keys)
         print(self.header)
+        print(help_message)
         print(menu_prompt_msg)
         for k, v in self.options().items():
             print(menu_message % (k, v[0]))
